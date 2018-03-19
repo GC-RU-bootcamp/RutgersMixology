@@ -183,13 +183,13 @@ var getData2 = function(results){
   console.log(results);
 };
 
-filterBy("vodka", "cocktail", "", "", getData);
-listCategory(getData);
-listGlasses(getData);
-listIngredients(getData);
-listCategory(getData);
-randomDrink(getData);
-searchDrinkByName("martini", rendertext);
+// filterBy("vodka", "cocktail", "", "", getData);
+// listCategory(getData);
+// listGlasses(getData);
+// listIngredients(getData);
+// listCategory(getData);
+// randomDrink(getData);
+// searchDrinkByName("martini", rendertext);
 
 //listCategory(rendertext);
 
