@@ -21,7 +21,7 @@ $(document).ready(function() {
       col.addClass("col-3 bg-dark text-light trending");
       col.attr("idDrink", d.idDrink);
 
-      s = $("<h5>");
+      s = $("<h6>");
       s.text(d.strDrink);
       // s.attr("class", "title trending");
       s.attr("idDrink", d.idDrink);
