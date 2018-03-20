@@ -110,10 +110,10 @@ $(document).ready(function() {
       desc.append($("<hr>"));
       desc.append($("<div>"));
 
-      s = $("<h4>");
-      s.text("Ingredients:");
-      s.attr("idDrink", d.idDrink);
-      desc.append(s);
+      // s = $("<h4>");
+      // s.text("Ingredients:");
+      // s.attr("idDrink", d.idDrink);
+      // ingre.append(s);
 
       var strIngredient = "";
       var strMeasure = "";
