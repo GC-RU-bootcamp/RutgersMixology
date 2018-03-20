@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="./assets/images/smiley.png" type="image/png" sizes="16x16">
+
+  <title>Rutgers Mixology Department </title>
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container bg-dark text-white">
+    <div class="row">
+      <div class="col-12">
+        <h1>Trending A-Z</h1>
+      </div>
+    </div>
+    <div id="trending" class="row">
+
+      <!-- list of trending drinks go here id="trending" -->
+ 
+     </div>
+  </div>
+
+    <!-- The trending Modal -->
+    <div class="modal fade" id="trending-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header" id="trending-header">
+              <h4 class="modal-title" id="trending-title">header</h4>
+              <button id="modal-header-btn1" type="button" class="close" data-dismiss="modal" id="modal-btn-x">&times;</button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+              <!-- <div id="trending-body" class="row">body</div> -->
+              <div class="row ">
+                  <div id="overview" class="col-6 bg-dark text-light ">
+                    <span>drink name and picture go here </span>
+                  </div>
+                  <div  class="col-6 bg-dark text-light ">
+                    <span id="description">drink description go here </span>
+                    <div id="ingredients" class="row ">
+                      <!-- ingredients columns go here -->
+            
+                      <!-- TRASH  <span class="col-3 bg-dark text-light ">
+                        <span>col-2 ingredient 1</span>
+                      </span>
+                      <div class="col-3 bg-dark text-light ">
+                        <span>col-2 ingredient 2</span>
+                      </div>
+                      <div class="col-3 bg-dark text-light ">
+                        <span>col2 ingredient 3</span>
+                      </div>
+                      <div class="col-3 bg-dark text-light ">
+                        <span>col2 ingredient 4</span>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button id="trending-btn" type="button" class="continue btn btn-warning" data-dismiss="modal" id="modal-btn">Continue</button>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+      <!-- End Audience modal dialog -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="./assets/scripts/data.js"></script>
+    <script src="./assets/scripts/getMixologyData.js"></script>
+    <script src="./assets/scripts/trending.js"></script>
+</body>
+
+</html>
