@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  
   function loadDrinkDetail(results) {
     console.log("RESULTS ARE");
     console.log(results);
