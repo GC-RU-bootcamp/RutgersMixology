@@ -22,7 +22,7 @@
     <header class="blog-header py-3">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col-4 pt-1">
-          <a class="btn btn-sm btn-outline-secondary" href="./favorites.html">My Favorite Drinks</a>
+          <a class="btn btn-sm btn-outline-secondary" href="#">My Favorite Drinks</a>
           <a class="text-muted" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round" class="mx-3">
@@ -58,27 +58,27 @@
           <h1>Trending A-Z</h1>
         </div>
       </div>
-      <div id="drink-list" class="row">
+      <div id="trending" class="row">
 
-        <!-- list of drinks go here id="drink-list" -->
+        <!-- list of trending drinks go here id="trending" -->
 
       </div>
     </div>
 
-    <!-- The drink-detail Modal -->
-    <div class="modal fade" id="drink-detail-modal">
+    <!-- The trending Modal -->
+    <div class="modal fade" id="trending-modal">
       <div class="modal-dialog">
         <div class="modal-content">
 
           <!-- Modal Header -->
-          <div class="modal-header" id="drink-detail-header">
-            <h4 class="modal-title" id="drink-detail-title">header</h4>
+          <div class="modal-header" id="trending-header">
+            <h4 class="modal-title" id="trending-title">header</h4>
             <button id="modal-header-btn1" type="button" class="close" data-dismiss="modal" id="modal-btn-x">&times;</button>
           </div>
 
           <!-- Modal body -->
           <div class="modal-body">
-            <!-- <div id="drink-detail-body" class="row">body</div> -->
+            <!-- <div id="trending-body" class="row">body</div> -->
             <div class="row ">
               <!-- <div id="overview" class="col-6 bg-dark text-light "> -->
               <div id="overview" class="col-6  ">
@@ -105,7 +105,7 @@
 
           <!-- Modal footer -->
           <div class="modal-footer">
-            <button id="drink-detail-btn" type="button" class="continue btn btn-warning" data-dismiss="modal" id="modal-btn">Continue</button>
+            <button id="trending-btn" type="button" class="continue btn btn-warning" data-dismiss="modal" id="modal-btn">Continue</button>
           </div>
 
         </div>
@@ -120,8 +120,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="./assets/scripts/data.js"></script>
     <script src="./assets/scripts/getMixologyData.js"></script>
-    <script src="./assets/scripts/favoritesUtilities.js"></script>
-    <script src="./assets/scripts/displayList.js"></script>
+    <script src="./assets/scripts/favorites.js"></script>
     <script src="./assets/scripts/trending.js"></script>
 </body>
 

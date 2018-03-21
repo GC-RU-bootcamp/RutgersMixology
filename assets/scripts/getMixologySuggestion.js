@@ -10,11 +10,25 @@ $(document).ready(function() {
     ov.empty();
     desc.empty();
     ingre.empty();
+    var s = "";
+    img = "";
+    like = "";
 
     for (i = 0; i < results.drinks.length; i++) {
       console.log(results.drinks[i].strDrink);
-      var s = $("<h3>");
       d = results.drinks[i];
+      
+      like = getFavoriteProperty(d.idDrink);
+      img = s = $("<img>");
+      img.attr("src", like.image);
+      img.attr("alt", "Like");
+      img.attr("width", "20px");
+      img.attr("class", "justify-content-end");
+      img.attr("idDrink", d.idDrink);
+      img.attr("like", like.checked);
+      ov.append(img);
+      
+      s = $("<h3>");
       s.text(d.strDrink);
       s.attr("class", "title");
       s.attr("idDrink", d.idDrink);
