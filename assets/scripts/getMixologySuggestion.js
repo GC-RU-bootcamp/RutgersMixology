@@ -23,9 +23,10 @@ $(document).ready(function() {
       img.attr("src", like.image);
       img.attr("alt", "Like");
       img.attr("width", "20px");
-      img.attr("class", "justify-content-end");
+      img.attr("class", "justify-content-end like");
       img.attr("idDrink", d.idDrink);
-      img.attr("like", like.checked);
+      img.attr("strDrink", d.strDrink);
+      img.attr("liked", like.checked);
       ov.append(img);
       
       s = $("<h3>");
@@ -158,6 +159,18 @@ $(document).ready(function() {
 
   $(document).on("click", ".random", function(e) {
     randomDrink(loadDrinkDetail);
+  });
+
+  $(document).on("click", ".like", function(e) {
+    e.stopPropagation();
+    var id = $(this).attr("idDrink");
+    var name = $(this).attr("strDrink");
+    var isLiked = $(this).attr("liked");
+    var like = "";
+
+    like = favoriteToggle(isLiked, id, name);
+    $(this).attr("src", like.image);
+    $(this).attr("liked", like.checked);
   });
 
   // $("button").click(function() {

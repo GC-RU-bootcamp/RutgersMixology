@@ -239,6 +239,7 @@
   });
 
   $(document).on("click", ".like", function(e) {
+    e.stopPropagation();
     var id = $(this).attr("idDrink");
     var name = $(this).attr("strDrink");
     var isLiked = $(this).attr("liked");
