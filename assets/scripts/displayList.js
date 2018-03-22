@@ -11,8 +11,20 @@
     var d = "";
     var img = "";
     var col = "";
+    var length = 0;
+
+    if (results === "")
+       { length = 0;}
+       else {
+         length = results.drinks.length;
+       }
+
+    if (length === 0) {
+      col = noResultsMsg(3);
+      tr.append(col);
+    }
     
-    for (i = 0; i < results.drinks.length; i++) {
+    for (i = 0; i < length; i++) {
       console.log(results.drinks[i].strDrink);
       
       d = results.drinks[i];
@@ -65,12 +77,28 @@
     var ov = $("#overview");
     var desc = $("#description");
     var ingre = $("#ingredients");
-    ov.empty();
-    desc.empty();
-    ingre.empty();
-    var s = "";
 
-    for (i = 0; i < results.drinks.length; i++) {
+    var s = "";
+    col = "";
+    var length = 0;
+
+    if (results === "") {
+      length = 0;
+    } else {
+      length = results.drinks.length;
+    }
+
+    if (length === 0) {
+      col = noResultsMsg(6);
+      ov.empty();
+      ov.append(col);
+    } else {
+      ov.empty();
+      desc.empty();
+      ingre.empty();
+    }
+    
+    for (i = 0; i < length; i++) {
       console.log(results.drinks[i].strDrink);
       d = results.drinks[i];
 
@@ -131,7 +159,6 @@
 
       var strIngredient = "";
       var strMeasure = "";
-      var col = "";
       var ind = "";
 
       // col = $("<div>");
@@ -176,6 +203,26 @@
       this.dialogOpen = true;
     }
   }
+
+  function noResultsMsg(colWidth){
+    var col = "", s = "", colClass = "";
+    colClass = "col-"+ colWidth;
+
+    col = $("<div>");
+    col.addClass(colClass + " bg-dark text-light text-centered");
+    col.append($("<br>"));
+    col.append($("<br>"));
+    s = $("<h2>")
+    s.text("Sorry. Nothing found.");
+    // s.attr("class", "title drink-detail");
+    s.attr("class", "text-centered text-info");
+    col.append(s);
+    col.append($("<br>"));
+    col.append($("<br>"));
+    col.append($("<hr>"));
+    return col;
+  };
+
 
   // "idDrink": "11060",
   // "strDrink": "Balmoral",

@@ -2,9 +2,18 @@ $(document).ready(function() {
 
   function displayFavorites(list) {
     var sd = $("#drink-list");
-    sd.empty();
+    col = "";
+    var length = list.length;
 
-    for (index = 0; index < list.length; index++) {
+    if (length === 0) {
+      col = noResultsMsg(12);
+      sd.append(col);
+    } else {
+      sd.empty();
+    }
+        
+
+    for (index = 0; index < length; index++) {
       var favorite = list[index];
       cocktailById(favorite.id, loadList);
     }
