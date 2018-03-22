@@ -5,6 +5,11 @@ function Favorite(drinkId, drinkName) {
   this.name = drinkName;
 }
 
+var icon_true = "./assets/images/Heart_icon_red.png"
+var icon_false = "./assets/images/Heart_icon_red_hollow.png"
+
+
+
 var favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
 
 // Checks to see if the todolist exists in localStorage and is an array currently
@@ -53,11 +58,11 @@ function isFavorite(id) {
 
 function getFavoriteProperty(id) {
   var retval = {
-    image: "./assets/images/heart-o-t.png",
+    image: icon_false,
     checked: "false"
   };
   if (isFavorite(id) > -1) {
-    retval.image = "./assets/images/heart-t.png";
+    retval.image = icon_true;
     retval.checked = "true";
   }
   return retval;
@@ -66,11 +71,11 @@ function getFavoriteProperty(id) {
 //value must be "true" or "false"
 function favoriteToggle(value, id, name) {
   var retval = {
-    image: "./assets/images/heart-o-t.png",
+    image: icon_false,
     checked: "false"
   };
   if (value === "false") {
-    retval.image = "./assets/images/heart-t.png";
+    retval.image = icon_true;
     retval.checked = "true";
     addFavorite(id, name);
   } else {
@@ -93,3 +98,35 @@ function favoriteToggle(value, id, name) {
 // $("#animate-check").prop("checked", false);
 //   }
 // });
+
+// create a like image tag to be placed as needed
+function createLikeImageElement(d) {
+  var like = "";
+  var img = "";
+
+  like = getFavoriteProperty(d.idDrink);
+  img = $("<img>");
+  img.attr("src", like.image);
+  img.attr("alt", "Like");
+  img.attr("width", "20px");
+  img.attr("class", "justify-content-end like");
+  img.attr("idDrink", d.idDrink);
+  img.attr("strDrink", d.strDrink);
+  img.attr("liked", like.checked);
+  return img;
+};
+
+// create a like image click handler
+$(document).on("click", ".like", function(e) {
+  // e.stopPropagation();
+  var id = $(this).attr("idDrink");
+  var name = $(this).attr("strDrink");
+  var isLiked = $(this).attr("liked");
+  var like = "";
+
+  like = favoriteToggle(isLiked, id, name);
+  $(this).attr("src", like.image);
+  $(this).attr("liked", like.checked);
+});
+
+

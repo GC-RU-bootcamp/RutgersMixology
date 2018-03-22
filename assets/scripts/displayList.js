@@ -11,26 +11,28 @@
     var d = "";
     var img = "";
     var col = "";
-    var like = "";
-
+    
     for (i = 0; i < results.drinks.length; i++) {
       console.log(results.drinks[i].strDrink);
-
+      
       d = results.drinks[i];
-      like = getFavoriteProperty(d.idDrink);
-
+      
       col = $("<div>");
       col.addClass("col-3 bg-dark text-light ");
       col.attr("idDrink", d.idDrink);
-
-      img = $("<img>");
-      img.attr("src", like.image);
-      img.attr("alt", "Like");
-      img.attr("width", "20px");
-      img.attr("class", "justify-content-end like");
-      img.attr("idDrink", d.idDrink);
-      img.attr("strDrink", d.strDrink);
-      img.attr("liked", like.checked);
+      
+      // placed all below into createLikeImageElement() function
+      // var like = "";
+      // like = getFavoriteProperty(d.idDrink);
+      // img = $("<img>");
+      // img.attr("src", like.image);
+      // img.attr("alt", "Like");
+      // img.attr("width", "20px");
+      // img.attr("class", "justify-content-end like");
+      // img.attr("idDrink", d.idDrink);
+      // img.attr("strDrink", d.strDrink);
+      // img.attr("liked", like.checked);
+      img = createLikeImageElement(d);
       col.append(img);
 
       s = $("<h6>");
@@ -238,16 +240,16 @@
     cocktailById(id, loadDrinkDetailModal);
   });
 
-  $(document).on("click", ".like", function(e) {
-    e.stopPropagation();
-    var id = $(this).attr("idDrink");
-    var name = $(this).attr("strDrink");
-    var isLiked = $(this).attr("liked");
-    var like = "";
+  // $(document).on("click", ".like", function(e) {
+  //   e.stopPropagation();
+  //   var id = $(this).attr("idDrink");
+  //   var name = $(this).attr("strDrink");
+  //   var isLiked = $(this).attr("liked");
+  //   var like = "";
 
-    like = favoriteToggle(isLiked, id, name);
-    $(this).attr("src", like.image);
-    $(this).attr("liked", like.checked);
-  });
+  //   like = favoriteToggle(isLiked, id, name);
+  //   $(this).attr("src", like.image);
+  //   $(this).attr("liked", like.checked);
+  // });
 
 // });

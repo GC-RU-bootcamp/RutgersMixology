@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Rutgers Mixology Dept</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="./assets/images/smiley.png" type="image/png" sizes="16x16">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="suggestion-style">
+  <!-- <header> -->
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="btn btn-sm btn-outline-secondary" href="./favorites.html">My Favorite Drinks</a>
+        <a class="text-muted" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" class="mx-3">
+            <circle cx="10.5" cy="10.5" r="7.5"></circle>
+            <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
+          </svg>
+        </a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="#">Rutgers Mixology Department</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="text-muted" href="#">Social Media Icons go Here</a>
+      </div>
+    </div>
+  </header>
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 text-muted" href="./index.html">Home</a>
+      <!-- <a class="p-2 text-muted" href="#">My Liquor Cabinet</a> -->
+      <a class="p-2 text-muted" href="./search.html">Search for Recipes</a>
+      <a class="p-2 text-muted" href="./suggestion.html">Surprise Me</a>
+      <a class="p-2 text-muted" href="./trending.html">Trending</a>
+      <a class="p-2 text-muted" href="#">Buy Ingredients</a>
+      <a class="p-2 text-muted" href="#">Find a Bar</a>
+    </nav>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row ">
+      <div id="Search-by-name" class="col-12 bg-secondary ">
+        <div class="card m-3">
+          <div class="card-header">
+            <h4>Search by name </h4>
+          </div>
+          <div class="card-body">
+            <div class="form-inline ">
+              <input type="text" class="form-control" id="drink-name" placeholder="Enter drink name"  style="width: 50%">
+              <a name="" id="name-search" class="btn  btn-info ml-5" href="#" role="button">Find by name</a>
+            </div>
+            <label for="drink-name">For example: Martini Manhattan Margarita Daiquiri ... </label>
+          </div>
+          <div class="card-footer">
+            <!--class= btn-primary|secondary|success|danger|warning|info|light|dark|link -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="Search-by-ingredient" class="col-12 bg-secondary ">
+        <div class="card m-3">
+          <div class="card-header">
+            <h4>Search by Ingredients</h4>
+          </div>
+          <div class="card-body">
+            <form action="">
+            <div id="cat-type" class="form-group">
+              <h6>Drink type</h6>
+              <div class="pretty p-default p-curve">
+                <input type="radio" name="category" value="" checked />
+                <div class="state p-secondary-o">
+                  <label>All</label>
+                </div>
+              </div>
+              <div class="pretty p-default p-curve">
+                <input type="radio" name="category" value="Ordinary Drink" />
+                <div class="state p-primary-o">
+                  <label>Mixed</label>
+                </div>
+              </div>
+              <div class="pretty p-default p-curve">
+                <input type="radio" name="category" value="Cocktail"/>
+                <div class="state p-danger-o">
+                  <label>Cocktail</label>
+                </div>
+              </div>
+              <div class="pretty p-default p-curve">
+                <input type="radio" name="category" value="Punch / Party Drink"/>
+                <div class="state p-success-o">
+                  <label>Party</label>
+                </div>
+              </div>
+            </div>
+          </form>
+            <!-- END <div id="cat-type" class="form-group"> -->
+          <form action="">
+            <div id="ach-type" class="form-group">
+              <h6>Achohol</h6>
+              <div class="pretty p-default p-curve">
+                <input type="radio" name="achohol" value="" checked />
+                <div class="state p-secondary-o">
+                  <label>Any</label>
+                </div>
+              </div>
+              <div class="pretty p-default p-curve">
+                <input type="radio" name="achohol" value="Alcoholic"/>
+                <div class="state p-success-o">
+                  <label>Yes</label>
+                </div>
+              </div>
+              <div class="pretty p-default p-curve">
+                <input type="radio" name="achohol" value="Non alcoholic"/>
+                <div class="state p-danger-o">
+                  <label>No</label>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- END <div id="ach-type" class="form-group"> -->
+          <h6>Contains Ingredient </h6>
+          <!-- <span id="ing-id", ingval="?">?</span> -->
+          <div class="form-inline ">
+              <input type="text" class="form-control" id="ing-name" placeholder="Enter name OR select from below" style="width: 50%">
+              <a name="" id="ing-search" class="btn  btn-info ml-5" href="#" role="button">Find by ingredients</a>
+            </div>
+          <br>
+          <div id="ind-list" class="row">
+            <!-- list of selectable ingredients are put here -->
+          </div>
+
+
+
+
+
+          </div>
+        <!-- </div> -->
+        <div class="card-footer">
+          <!--class= btn-primary|secondary|success|danger|warning|info|light|dark|link -->
+          <!-- <a name="" id="name-search" class="btn  btn-primary" href="#" role="button">Find by ingredients</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js "></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js "></script>
+  <script src="./assets/scripts/data.js"></script>
+  <script src="./assets/scripts/getMixologyData.js "></script>
+  <script src="./assets/scripts/favoritesUtilities.js"></script>
+  <script src="./assets/scripts/search.js "></script>
+</body>
+
+</html>
