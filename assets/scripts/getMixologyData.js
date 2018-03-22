@@ -84,6 +84,7 @@ function imageURL(name) {
 // randomDrink returns one random drink
 function randomDrink(myFunc) {
   var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+  console.log("searchDrinkByName URL= "+queryURL);
   var retval = makeRequest(queryURL, myFunc);
   return retval;
 }
@@ -96,6 +97,7 @@ function searchDrinkByName(name, myFunc) {
   var queryURL =
     "https://www.thecocktaildb.com/api/json/v1/" + api_key + searchStr + name;
   // ex: https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+  console.log("searchDrinkByName URL= "+queryURL);
   var retval = makeRequest(queryURL, myFunc);
   return retval;
 }
@@ -116,6 +118,7 @@ function ingredientDescription(name, myFunc) {
   var queryURL =
     "https://www.thecocktaildb.com/api/json/v1/" + api_key + searchStr + name;
   //ex: https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka
+  console.log("ingredientDescription URL= "+queryURL);
   var retval = makeRequest(queryURL, myFunc);
   return retval;
 }
@@ -128,6 +131,7 @@ function cocktailById(id, myFunc) {
   var queryURL =
     "https://www.thecocktaildb.com/api/json/v1/" + api_key + searchStr + id;
   //ex: https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=13060
+  console.log("cocktailById URL= "+queryURL);
   var retval = makeRequest(queryURL, myFunc);
   return retval;
 }
@@ -167,7 +171,8 @@ function filterBy(ingredient, subCategory, glass, alcoholic, myFunc) {
     api_key +
     searchStr +
     filterParam;
-  //ex: https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka
+    //ex: https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka
+    console.log("filterBy URL= "+queryURL);
   var retval = makeRequest(queryURL, myFunc);
   return retval;
 }

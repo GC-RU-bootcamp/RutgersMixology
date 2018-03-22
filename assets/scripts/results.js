@@ -9,7 +9,7 @@ $(document).ready(function() {
    if (param.searchBy === "name" ){
       searchDrinkByName(drinkSearchParams.name, loadList);
     } else {
-      filterBy(param.ingredients, param.category, param.glass, param.alcoholic, loadList)
+      filterBy(param.ingredients, param.category, param.glass, param.alcohol, loadList)
     }
   };
   
