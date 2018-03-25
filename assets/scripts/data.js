@@ -34,7 +34,6 @@ var drinkSearchParams = {
   glass: ""  // see function listGlasses(myFunc) return values
 };
 
-
 var ingredientList = [
   "",
   "151 proof rum",

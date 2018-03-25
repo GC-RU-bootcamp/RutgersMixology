@@ -12,45 +12,62 @@
 
   <!-- Bootstrap CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+
+
 
   <!-- Custom styles for this template -->
   <link href="./assets/css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
   <!-- <header> -->
-    <header class="blog-header py-3">
-      <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-4 pt-1">
-          <a class="btn btn-sm btn-outline-secondary" href="./favorites.html">My Favorite Drinks</a>
-          <a class="text-muted" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" class="mx-3">
-              <circle cx="10.5" cy="10.5" r="7.5"></circle>
-              <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
-            </svg>
-          </a>
-        </div>
-        <div class="col-4 text-center">
-          <a class="blog-header-logo text-dark" href="#">Rutgers Mixology Department</a>
-        </div>
-        <div class="col-4 d-flex justify-content-end align-items-center">
-          <a class="text-muted" href="#">Social Media Icons go Here</a>
-        </div>
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a id="favbutton" class="btn btn-sm btn-outline-secondary" href="./favorites.html">My Favorites</a>
+        </a>
       </div>
-    </header>
+      <div class="col-4 text-center">
+        <span>
+          <a style="text-decoration:none" class="blog-header-logo text-dark" href="./index.html">Rutgers Mixology Department</a>
+        </span>
+      </div>
+      <div id="social-icons" class="col-4">
+        <span>
+          <a id="sm-icons" href="https://www.uber.com" style="text-decoration:none" type="btn btn-sm" class="btn btn-link">
+            <img src="./assets/images/if_70-uber_1181193.png" alt="uber">
+          </a>
+          <a id="sm-icons" href="https://www.instagram.com" style="text-decoration:none" type="btn btn-sm" class="btn btn-link">
+            <img src="./assets/images/if_38-instagram_104466.png" alt="insta">
+          </a>
+          <a id="sm-icons" href="https://twitter.com/" style="text-decoration:none" type="btn btn-sm" class="btn btn-link">
+            <img src="./assets/images/if_43-twitter_104461 (1).png" alt="twitter">
+          </a>
+          <a id="sm-icons" href="https://www.facebook.com/" style="text-decoration:none" type="btn btn-sm" class="btn btn-link">
+            <img src="./assets/images/if_46-facebook_104458.png" alt="facebook">
+          </a>
+        </span>
+      </div>
 
-    <div class="nav-scroller py-1 mb-2">
-      <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="./index.html">Home</a>
-        <!-- <a class="p-2 text-muted" href="#">My Liquor Cabinet</a> -->
-        <a class="p-2 text-muted" href="./search.html">Search for Recipes</a>
-        <a class="p-2 text-muted" href="./suggestion.html">Surprise Me</a>
-        <a class="p-2 text-muted" href="./trending.html">Trending</a>
-        <a class="p-2 text-muted" href="#">Buy Ingredients</a>
-        <a class="p-2 text-muted" href="#">Find a Bar</a>
-      </nav>
     </div>
+    </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-1">
+    <nav id="nav" class="nav d-flex justify-content-between">
+      <a style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="./index.html">Home</a>
+      <!-- <a class="p-2 text-muted" href="#">My Liquor Cabinet</a> -->
+      <a style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="./search.html">Search for Recipes</a>
+      <a style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="./suggestion.html">Surprise Me</a>
+      <a style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="./trending.html">Trending</a>
+      <a id="find-store" style="border-color:transparent" class="btn btn-sm btn-outline-secondary">Buy Ingredients</a>
+      <a id="find-bar" style="border-color:transparent" class="btn btn-sm btn-outline-secondary">Find a Bar</a>
+    </nav>
+  </div>
 
     <div class="container bg-dark text-white">
       <div class="row">
@@ -111,7 +128,77 @@
         </div>
       </div>
     </div>
-    <!-- End Audience modal dialog -->
+    <!-- End drink detail modal dialog -->
+
+
+  <!-- The location-lookup Modal -->
+  <div class="modal fade" id="location-lookup-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header" id="location-lookup-header">
+            <h4 class="modal-title" id="location-lookup-title">TITLE</h4>
+            <button id="modal-header-btn1" type="button" class="close" data-dismiss="modal" id="modal-btn-x">&times;</button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+  
+            <a name="" id="geo-search" class="btn  btn-success ml-0" href="#" role="button">my current location</a>
+            <br>
+            <br>
+            <p>OR</p>
+            <div class="form-inline ">
+              <!-- <p></p> -->
+              <input type="text" class="form-control" id="drink-name" placeholder="use this location" style="width: 75%">
+              <a name="" id="addr-search" class="btn  btn-success ml-1" href="#" role="button">Find</a>
+            </div>
+            <br>
+          </div>
+          <!--END  Modal body -->
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <!-- <button id="location-lookup-btn" type="button" class="continue btn btn-warning" data-dismiss="modal" id="modal-btn">Continue</button> -->
+          </div>
+          <!-- END Modal footer -->
+        </div>
+      </div>
+    </div>
+    <!-- End location modal dialog -->
+  
+    <!-- The error Modal -->
+    <div class="modal fade" id="error-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header bg-danger text-light" id="error-header">
+            <h4 class="modal-title" id="error-title">ERROR</h4>
+            <button id="modal-header-btn1" type="button" class="close" data-dismiss="modal" id="modal-btn-x">&times;</button>
+          </div>
+          <!-- Modal body -->
+          <!-- <div class="modal-body">
+      
+                <a name="" id="geo-search" class="btn  btn-success ml-0" href="#" role="button">my current location</a>
+                <br>
+                <br>
+                <p>OR</p>
+                <div class="form-inline "> -->
+          <!-- <p></p> -->
+          <!-- <input type="text" class="form-control" id="drink-name" placeholder="use this location" style="width: 75%">
+                  <a name="" id="addr-search" class="btn  btn-success ml-1" href="#" role="button">Find</a>
+                </div>
+                <br>
+              </div> -->
+          <!--END  Modal body -->
+          <!-- Modal footer -->
+          <!-- <div class="modal-footer">
+                <button id="error-btn" type="button" class="continue btn btn-warning" data-dismiss="modal" id="modal-btn">Continue</button>
+              </div> -->
+          <!-- END Modal footer -->
+        </div>
+      </div>
+    </div>
+    <!-- End error modal dialog -->
+  
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -122,6 +209,8 @@
     <script src="./assets/scripts/getMixologyData.js"></script>
     <script src="./assets/scripts/favoritesUtilities.js"></script>
     <script src="./assets/scripts/displayList.js"></script>
+    <script src="./assets/scripts/myLocation.js"></script>
+    <script src="./assets/scripts/index.js"></script>
     <script src="./assets/scripts/trending.js"></script>
 </body>
 

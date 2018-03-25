@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <link rel="icon" href="./assets/images/smiley.png" type="image/png" sizes="16x16">
+
+  <title>Rutgers Mixology Department </title>
+
+
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+
+
+
+  <!-- Custom styles for this template -->
+  <link href="./assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+    #map {
+      height: 100%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #description {
+      font-family: Roboto;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    #infowindow-content .title {
+      font-weight: bold;
+    }
+
+    #infowindow-content {
+      display: none;
+    }
+
+    #map #infowindow-content {
+      display: inline;
+    }
+
+    .pac-card {
+      margin: 10px 10px 0 0;
+      border-radius: 2px 0 0 2px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      font-family: Roboto;
+    }
+
+    #pac-container {
+      padding-bottom: 12px;
+      margin-right: 12px;
+    }
+
+    .pac-controls {
+      display: inline-block;
+      padding: 5px 11px;
+    }
+
+    .pac-controls label {
+      font-family: Roboto;
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    #pac-input {
+      background-color: #fff;
+      font-family: Roboto;
+      font-size: 15px;
+      font-weight: 300;
+      margin-left: 12px;
+      padding: 0 11px 0 13px;
+      text-overflow: ellipsis;
+      width: 400px;
+    }
+
+    #pac-input:focus {
+      border-color: #4d90fe;
+    }
+
+    #title {
+      color: #fff;
+      background-color: #4d90fe;
+      font-size: 25px;
+      font-weight: 500;
+      padding: 6px 12px;
+    }
+
+    #target {
+      width: 345px;
+    }
+  </style>
+</head>
+
+<body>
+    <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+            <a id="favbutton" class="btn btn-sm btn-outline-secondary" href="./favorites.html">My Favorites</a>
+            </a>
+          </div>
+          <div class="col-4 text-center">
+            <span>
+              <a style="text-decoration:none" class="blog-header-logo text-dark" href="./index.html">Rutgers Mixology Department</a>
+            </span>
+          </div>
+          <div id="social-icons" class="col-4">
+            <span>
+              <a id="sm-icons" href="https://www.uber.com" style="text-decoration:none" type="btn btn-sm" class="btn btn-link">
+                <img src="./assets/images/if_70-uber_1181193.png" alt="uber">
+              </a>
+              <a id="sm-icons" href="https://www.instagram.com" style="text-decoration:none" type="btn btn-sm" class="btn btn-link">
+                <img src="./assets/images/if_38-instagram_104466.png" alt="insta">
+              </a>
+              <a id="sm-icons" href="https://twitter.com/" style="text-decoration:none" type="btn btn-sm" class="btn btn-link">
+                <img src="./assets/images/if_43-twitter_104461 (1).png" alt="twitter">
+              </a>
+              <a id="sm-icons" href="https://www.facebook.com/" style="text-decoration:none" type="btn btn-sm" class="btn btn-link">
+                <img src="./assets/images/if_46-facebook_104458.png" alt="facebook">
+              </a>
+            </span>
+          </div>
+    
+        </div>
+        </div>
+        </div>
+      </header>
+    
+      <div class="nav-scroller py-1 mb-1">
+        <nav id="nav" class="nav d-flex justify-content-between">
+          <a style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="./index.html">Home</a>
+          <!-- <a class="p-2 text-muted" href="#">My Liquor Cabinet</a> -->
+          <a style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="./search.html">Search for Recipes</a>
+          <a style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="./suggestion.html">Surprise Me</a>
+          <a style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="./trending.html">Trending</a>
+          <a id="find-store" style="border-color:transparent" class="btn btn-sm btn-outline-secondary">Buy Ingredients</a>
+          <a id="find-bar" style="border-color:transparent" class="btn btn-sm btn-outline-secondary">Find a Bar</a>
+        </nav>
+      </div>
+
+
+  <!-- MAP IS HERE     -->
+  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+  <div id="map"></div>
+
+  <!-- The location-lookup Modal -->
+  <div class="modal fade" id="location-lookup-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header" id="location-lookup-header">
+            <h4 class="modal-title" id="location-lookup-title">TITLE</h4>
+            <button id="modal-header-btn1" type="button" class="close" data-dismiss="modal" id="modal-btn-x">&times;</button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+  
+            <a name="" id="geo-search" class="btn  btn-success ml-0" href="#" role="button">my current location</a>
+            <br>
+            <br>
+            <p>OR</p>
+            <div class="form-inline ">
+              <!-- <p></p> -->
+              <input type="text" class="form-control" id="drink-name" placeholder="use this location" style="width: 75%">
+              <a name="" id="addr-search" class="btn  btn-success ml-1" href="#" role="button">Find</a>
+            </div>
+            <br>
+          </div>
+          <!--END  Modal body -->
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <!-- <button id="location-lookup-btn" type="button" class="continue btn btn-warning" data-dismiss="modal" id="modal-btn">Continue</button> -->
+          </div>
+          <!-- END Modal footer -->
+        </div>
+      </div>
+    </div>
+    <!-- End location modal dialog -->
+  
+    <!-- The error Modal -->
+    <div class="modal fade" id="error-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header bg-danger text-light" id="error-header">
+            <h4 class="modal-title" id="error-title">ERROR</h4>
+            <button id="modal-header-btn1" type="button" class="close" data-dismiss="modal" id="modal-btn-x">&times;</button>
+          </div>
+          <!-- Modal body -->
+          <!-- <div class="modal-body">
+      
+                <a name="" id="geo-search" class="btn  btn-success ml-0" href="#" role="button">my current location</a>
+                <br>
+                <br>
+                <p>OR</p>
+                <div class="form-inline "> -->
+          <!-- <p></p> -->
+          <!-- <input type="text" class="form-control" id="drink-name" placeholder="use this location" style="width: 75%">
+                  <a name="" id="addr-search" class="btn  btn-success ml-1" href="#" role="button">Find</a>
+                </div>
+                <br>
+              </div> -->
+          <!--END  Modal body -->
+          <!-- Modal footer -->
+          <!-- <div class="modal-footer">
+                <button id="error-btn" type="button" class="continue btn btn-warning" data-dismiss="modal" id="modal-btn">Continue</button>
+              </div> -->
+          <!-- END Modal footer -->
+        </div>
+      </div>
+    </div>
+    <!-- End error modal dialog -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="./assets/scripts/myLocation.js"></script>
+    <script src="./assets/scripts/index.js"></script>
+  <script>
+    // This example adds a search box to a map, using the Google Place Autocomplete
+    // feature. People can enter geographical searches. The search box will return a
+    // pick list containing a mix of places and predicted search terms.
+
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+    var map;
+    var infowindow;
+
+
+    function initAutocomplete() {
+      // setMyLocation(myLocations);
+      myLoc = getMyLocation();
+
+      var mine = {
+        lat: parseFloat(myLoc.lat),
+        lng: parseFloat(myLoc.lng)
+      };
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: mine,
+        zoom: 13,
+        mapTypeId: 'roadmap'
+      });
+      infowindow = new google.maps.InfoWindow();
+
+      var markerMe = new google.maps.Marker({
+        position: mine,
+        map: map
+      });
+
+      var service = new google.maps.places.PlacesService(map);
+      service.nearbySearch({
+        location: mine,
+        radius: 5000,
+        type: [myLoc.place]
+      }, callback);
+
+
+      // Create the search box and link it to the UI element.
+      var input = document.getElementById('pac-input');
+      document.getElementById("pac-input").value = myLoc.place;
+      var searchBox = new google.maps.places.SearchBox(input);
+      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+      // Bias the SearchBox results towards current map's viewport.
+      map.addListener('bounds_changed', function () {
+        searchBox.setBounds(map.getBounds());
+      });
+
+      var markers = [];
+      // Listen for the event fired when the user selects a prediction and retrieve
+      // more details for that place.
+      searchBox.addListener('places_changed', function () {
+        var places = searchBox.getPlaces();
+        MyPaintMarkers(places);
+
+        // if (places.length == 0) {
+        //   return;
+        // }
+
+        // // Clear out the old markers.
+        // markers.forEach(function (marker) {
+        //   marker.setMap(null);
+        // });
+        // markers = [];
+
+        // // For each place, get the icon, name and location.
+        // var bounds = new google.maps.LatLngBounds();
+        // places.forEach(function (place) {
+        //   if (!place.geometry) {
+        //     console.log("Returned place contains no geometry");
+        //     return;
+        //   }
+        //   var icon = {
+        //     url: place.icon,
+        //     size: new google.maps.Size(71, 71),
+        //     origin: new google.maps.Point(0, 0),
+        //     anchor: new google.maps.Point(17, 34),
+        //     scaledSize: new google.maps.Size(25, 25)
+        //   };
+
+        //   // Create a marker for each place.
+        //   markers.push(new google.maps.Marker({
+        //     map: map,
+        //     icon: icon,
+        //     title: place.name,
+        //     position: place.geometry.location
+        //   }));
+
+        //   if (place.geometry.viewport) {
+        //     // Only geocodes have viewport.
+        //     bounds.union(place.geometry.viewport);
+        //   } else {
+        //     bounds.extend(place.geometry.location);
+        //   }
+        // });
+        // map.fitBounds(bounds);
+      });
+    } // END INIT
+
+    function callback(results, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        // for (var i = 0; i < results.length; i++) {
+        //   createMarker(results[i]);
+        // }
+        MyPaintMarkers(results);
+      }
+    }
+
+    function createMarker(place) {
+      var placeLoc = place.geometry.location;
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+      });
+
+      google.maps.event.addListener(marker, 'click', function () {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+      });
+
+      if (places.length == 0) {
+        return;
+      }
+    };
+
+    function MyPaintMarkers(places) {
+      // Clear out the old markers.
+      var markers = [];
+      
+      markers.forEach(function (marker) {
+        marker.setMap(null);
+      });
+      markers = [];
+
+      // For each place, get the icon, name and location.
+      var bounds = new google.maps.LatLngBounds();
+      places.forEach(function (place) {
+        if (!place.geometry) {
+          console.log("Returned place contains no geometry");
+          return;
+        }
+        var icon = {
+          url: place.icon,
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25)
+        };
+
+        // Create a marker for each place.
+        markers.push(new google.maps.Marker({
+          map: map,
+          icon: icon,
+          title: place.name,
+          position: place.geometry.location
+        }));
+
+        if (place.geometry.viewport) {
+          // Only geocodes have viewport.
+          bounds.union(place.geometry.viewport);
+        } else {
+          bounds.extend(place.geometry.location);
+        }
+      });
+      map.fitBounds(bounds);
+    };
+
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF9kFWhXlw0yZLMhyn93tAJAS86JbZJVE&libraries=places&callback=initAutocomplete"
+    defer></script>
+</body>
+
+</html>
