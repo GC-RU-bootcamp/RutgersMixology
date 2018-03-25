@@ -149,7 +149,7 @@
             <p>OR</p>
             <div class="form-inline ">
               <!-- <p></p> -->
-              <input type="text" class="form-control" id="drink-name" placeholder="use this location" style="width: 75%">
+              <input type="text" class="form-control" id="location-str" placeholder="use this location" style="width: 75%">
               <a name="" id="addr-search" class="btn  btn-success ml-1" href="#" role="button">Find</a>
             </div>
             <br>
@@ -199,6 +199,7 @@
     </div>
     <!-- End error modal dialog -->
   
+    <div id="map" style="display: none"></div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -210,6 +211,7 @@
     <script src="./assets/scripts/favoritesUtilities.js"></script>
     <script src="./assets/scripts/displayList.js"></script>
     <script src="./assets/scripts/myLocation.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF9kFWhXlw0yZLMhyn93tAJAS86JbZJVE&callback=initMap"> </script>
     <script src="./assets/scripts/index.js"></script>
     <script src="./assets/scripts/trending.js"></script>
 </body>

@@ -199,7 +199,7 @@
           <p>OR</p>
           <div class="form-inline ">
             <!-- <p></p> -->
-            <input type="text" class="form-control" id="drink-name" placeholder="use this location" style="width: 75%">
+            <input type="text" class="form-control" id="location-str" placeholder="use this location" style="width: 75%">
             <a name="" id="addr-search" class="btn  btn-success ml-1" href="#" role="button">Find</a>
           </div>
           <br>
@@ -215,40 +215,41 @@
   </div>
   <!-- End location modal dialog -->
 
-    <!-- The error Modal -->
-    <div class="modal fade" id="error-modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header bg-danger text-light" id="error-header">
-              <h4 class="modal-title" id="error-title">ERROR</h4>
-              <button id="modal-header-btn1" type="button" class="close" data-dismiss="modal" id="modal-btn-x">&times;</button>
-            </div>
-            <!-- Modal body -->
-            <!-- <div class="modal-body">
+  <!-- The error Modal -->
+  <div class="modal fade" id="error-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header bg-danger text-light" id="error-header">
+          <h4 class="modal-title" id="error-title">ERROR</h4>
+          <button id="modal-header-btn1" type="button" class="close" data-dismiss="modal" id="modal-btn-x">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <!-- <div class="modal-body">
     
               <a name="" id="geo-search" class="btn  btn-success ml-0" href="#" role="button">my current location</a>
               <br>
               <br>
               <p>OR</p>
               <div class="form-inline "> -->
-                <!-- <p></p> -->
-                <!-- <input type="text" class="form-control" id="drink-name" placeholder="use this location" style="width: 75%">
+        <!-- <p></p> -->
+        <!-- <input type="text" class="form-control" id="drink-name" placeholder="use this location" style="width: 75%">
                 <a name="" id="addr-search" class="btn  btn-success ml-1" href="#" role="button">Find</a>
               </div>
               <br>
             </div> -->
-            <!--END  Modal body -->
-            <!-- Modal footer -->
-            <!-- <div class="modal-footer">
+        <!--END  Modal body -->
+        <!-- Modal footer -->
+        <!-- <div class="modal-footer">
               <button id="error-btn" type="button" class="continue btn btn-warning" data-dismiss="modal" id="modal-btn">Continue</button>
             </div> -->
-            <!-- END Modal footer -->
-          </div>
-        </div>
+        <!-- END Modal footer -->
       </div>
-      <!-- End location modal dialog -->
+    </div>
+  </div>
+  <!-- End error modal dialog -->
 
+  <div id="map" style="display: none"></div>
 
   <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -261,6 +262,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <!-- <script src="../../../../assets/js/vendor/holder.min.js"></script> -->
   <script src="./assets/scripts/myLocation.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF9kFWhXlw0yZLMhyn93tAJAS86JbZJVE&callback=initMap"> </script>
   <script src="./assets/scripts/index.js"></script>
 
 </body>
