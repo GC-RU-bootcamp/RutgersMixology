@@ -2,7 +2,7 @@
 
 ### Created by:
 Gary Cender, Rick Santos , Connor Reddington 
-## Site URL: 
+### Site URL: 
  https://gc-ru-bootcamp.github.io/RutgersMixology
 
 ### Description:
