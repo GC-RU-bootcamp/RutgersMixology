@@ -130,3 +130,19 @@ $(document).on("click", ".like", function(e) {
 });
 
 
+function likeImgByCnt() {
+  var retval = icon_true;
+  if ( favoritesList.length === 0 ) {
+    retval = icon_false; 
+  } 
+  return retval; 
+
+};
+
+function setfavoriteBtnImg(){
+ $("#likeBtnImg").attr("src", likeImgByCnt())
+
+};
+
+setfavoriteBtnImg();
+
