@@ -13,4 +13,4 @@ Gary Cender, Rick Santos , Connor Reddington
 
 ### Technology: 
 * __UI:__ HTML, CSS, Bootstrap 4, fonts.googleapis.com/css, pretty-checkbox.min.css
-* __APIs:__ Cocktail DB, google maps
+* __APIs:__ Cocktail DB, geoLocation, geoCoding, google maps
