@@ -155,8 +155,8 @@
           <a style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="./search.html">Search for Recipes</a>
           <a style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="./suggestion.html">Surprise Me</a>
           <a style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="./trending.html">Trending</a>
-          <a id="find-store" style="border-color:transparent" class="btn btn-sm btn-outline-secondary">Buy Ingredients</a>
-          <a id="find-bar" style="border-color:transparent" class="btn btn-sm btn-outline-secondary">Find a Bar</a>
+          <a id="find-store" style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="#">Buy Ingredients</a>
+          <a id="find-bar" style="border-color:transparent" class="btn btn-sm btn-outline-secondary" href="#">Find a Bar</a>
         </nav>
       </div>
 
@@ -286,7 +286,7 @@
       var service = new google.maps.places.PlacesService(map);
       service.nearbySearch({
         location: mine,
-        radius: 5000,
+        radius: 8000,
         type: [myLoc.place]
       }, callback);
 
