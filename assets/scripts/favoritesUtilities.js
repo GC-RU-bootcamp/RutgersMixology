@@ -119,7 +119,7 @@ function createLikeImageElement(d) {
   // imgHidden.attr("top", "0px");
   // imgHidden.attr("left", "opx");
   
-  // img = $("<img>");
+  img = $("<img>");
   // img = $("<div>");
   img.attr("src", like.image);
   // img.css('background', 'url("' + like.image + '")');
