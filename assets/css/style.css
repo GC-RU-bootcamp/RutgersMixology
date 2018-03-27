@@ -120,3 +120,21 @@ footer p {
   width: 143px;
   height: 143px;
 }
+
+.like-hidden {
+  /* background: url("../images/Heart_icon_red.png");
+  src: url("../images/Heart_icon_red.png"); */
+  opacity: 0.0;
+  position: absolute;
+  /* top: 0px;
+  left: 0px; */
+  top: 3px;
+    left: 14px;
+}
+
+.like-hidden:hover {
+  /* background: url("../images/Heart_icon_red.png");
+  src: url("../images/Heart_icon_red.png"); */
+  opacity: 0.55;
+
+}

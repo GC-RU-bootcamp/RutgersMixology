@@ -43,6 +43,15 @@ $("#find-store2").click(function (e) {
   showLocationDialog(title);
 });
 
+
+$("#find-store3").click(function (e) {
+  var title = "Find a liquor store from:";
+
+  myLocations.place = "liquor_store";
+  setMyLocation(myLocations);
+  showLocationDialog(title);
+});
+
 $("#find-bar").click(function (e) {
   var title = "Find a bar from:";
 
@@ -53,6 +62,15 @@ $("#find-bar").click(function (e) {
 });
 
 $("#find-bar2").click(function (e) {
+  var title = "Find a bar from:";
+
+  myLocations.place = "bar";
+  setMyLocation(myLocations);
+  showLocationDialog(title);
+
+});
+
+$("#find-bar3").click(function (e) {
   var title = "Find a bar from:";
 
   myLocations.place = "bar";

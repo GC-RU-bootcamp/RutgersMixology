@@ -103,8 +103,22 @@ function favoriteToggle(value, id, name) {
 function createLikeImageElement(d) {
   var like = "";
   var img = "";
+  // var imgHidden = "";
+  // var s = "";
 
   like = getFavoriteProperty(d.idDrink);
+
+  // s = $("<span>");
+  // s.addClass("like-holder");
+  // imgHidden = $("<img>");
+  // imgHidden.attr("src", icon_true);
+  // imgHidden.attr("width", "20px");
+  // imgHidden.attr("class", "like-hidden");
+  // imgHidden.attr("opacity", 0);
+  // imgHidden.attr("position", "absolute");
+  // imgHidden.attr("top", "0px");
+  // imgHidden.attr("left", "opx");
+  
   img = $("<img>");
   img.attr("src", like.image);
   img.attr("alt", "Like");
@@ -113,6 +127,12 @@ function createLikeImageElement(d) {
   img.attr("idDrink", d.idDrink);
   img.attr("strDrink", d.strDrink);
   img.attr("liked", like.checked);
+  img.attr("position", "relative");
+
+  // s.append(img);
+  // s.append(imgHidden);
+  // s.append(img);
+
   return img;
 };
 
@@ -128,6 +148,31 @@ $(document).on("click", ".like", function(e) {
   $(this).attr("src", like.image);
   $(this).attr("liked", like.checked);
 });
+
+// $(document).on("click", ".like-hidden", function(e) {
+//   // e.stopPropagation();
+//   var id = $(this).attr("idDrink");
+//   var name = $(this).attr("strDrink");
+//   var isLiked = $(this).attr("liked");
+//   var like = "";
+
+//   like = favoriteToggle(isLiked, id, name);
+//   $(this).attr("src", like.image);
+//   $(this).attr("liked", like.checked);
+// });
+
+
+// $(document).on("click", ".like-holder", function(e) {
+//   // e.stopPropagation();
+//   var id = $(this).attr("idDrink");
+//   var name = $(this).attr("strDrink");
+//   var isLiked = $(this).attr("liked");
+//   var like = "";
+
+//   like = favoriteToggle(isLiked, id, name);
+//   $(this).attr("src", like.image);
+//   $(this).attr("liked", like.checked);
+// });
 
 
 function likeImgByCnt() {
