@@ -132,9 +132,12 @@ footer p {
     left: 14px;
 }
 
-.like-hidden:hover {
-  /* background: url("../images/Heart_icon_red.png");
-  src: url("../images/Heart_icon_red.png"); */
-  opacity: 0.55;
+.like {
+  background: url("../images/Heart_icon_red_hollow.png") ;
+  opacity: 1;
+}
 
+.like:hover {
+  background: url("../images/Heart_icon_red.png") ;
+  opacity: 0.8;
 }

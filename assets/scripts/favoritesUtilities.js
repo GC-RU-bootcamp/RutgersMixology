@@ -121,6 +121,8 @@ function createLikeImageElement(d) {
   
   img = $("<img>");
   img.attr("src", like.image);
+  // img.css('background', 'url("' + like.image + '")');
+  // img.css('background-image', 'url("' + like.image + '")');
   img.attr("alt", "Like");
   img.attr("width", "20px");
   img.attr("class", "justify-content-end like");
