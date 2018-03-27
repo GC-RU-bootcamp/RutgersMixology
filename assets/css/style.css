@@ -87,7 +87,7 @@ footer p {
 
 #social-icons {
   padding-right: 0;
-  padding-left: 8rem;
+  padding-left: 7rem;  /* reduced by 1 so it fits on map page GC */
 }
 #sm-icons { 
   padding: .375rem .375rem;
