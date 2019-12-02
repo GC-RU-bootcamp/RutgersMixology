@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+  <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+  </head>
+  <body>
+      
+      <!-- <div class="pretty p-icon p-smooth">
+          <input type="checkbox" />
+          <div class="state p-success">
+              <i class="icon fa fa-check"></i>
+              <label>fa-check</label>
+          </div>
+      </div>
+  
+      <div class="pretty p-icon p-smooth">
+          <input type="checkbox" />
+          <div class="state p-danger-o">
+              <i class="icon fa fa-close"></i>
+              <label>fa-close</label>
+          </div>
+      </div>
+      
+      <div class="pretty p-icon p-toggle p-plain">
+        <input type="checkbox" />
+        <div class="state p-off">
+            <i class="icon fa fa-heart-o "></i>
+            <label>fa-heart-o</label>
+        </div>
+        <div class="state p-on p-info-o">
+            <i class="icon fa fa-heart"></i>
+            <label>fa-heart</label>
+        </div>
+    </div>
+
+    <div class="pretty p-icon p-toggle p-plain">
+        <input type="checkbox" />
+        <div class="state p-off">
+            <i class="icon fa fa-heart "></i>
+            <label>fa-heart-o</label>
+        </div>
+        <div class="state p-on p-info-o">
+            <i class="icon fa fa-heart"></i>
+            <label>fa-heart</label>
+        </div>
+    </div> -->
+
+    <div class="row">
+        <div class="col-4">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+            <div class="tab-pane fade show" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+            <div class="tab-pane fade show" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+            <div class="tab-pane fade show" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active">
+          Cras justo odio
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+        <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+        <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+      </div>
+
+
+<span>Contains Achohol:</span>
+    <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline1">Yes</label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline2">No</label>
+    </div>
+    <!-- <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline3">Dont care</label>
+    </div> -->
+
+    <div class="container">
+        <h2>Form control: checkbox</h2>
+        <p>The form below contains three checkboxes. The last option is disabled:</p>
+        <form>
+          <div class="radio">
+            <label><input type="radio" value="1">Option 1</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" value="2">Option 2</label>
+          </div>
+          <div class="radio ">
+            <label><input type="radio" value="3" >Option 3</label>
+          </div>
+        </form>
+      </div>
+
+      <div class="container">
+        <h2>Form control: inline radio buttons</h2>
+        <p>The form below contains three inline radio buttons:</p>
+        <form>
+          <label class="radio">
+            <input type="radio" name="optradio">Option 1
+          </label>
+          <label class="radio">
+            <input type="radio" name="optradio">Option 2
+          </label>
+          <label class="radio">
+            <input type="radio" name="optradio">Option 3
+          </label>
+        </form>
+      </div>
+
+
+      <div class="pretty p-default p-curve">
+        <input type="radio" name="color" />
+        <div class="state p-primary-o">
+            <label>Primary</label>
+        </div>
+    </div>
+
+    <div class="pretty p-default p-curve">
+        <input type="radio" name="color" />
+        <div class="state p-success-o">
+            <label>Success</label>
+        </div>
+    </div>
+
+    <div class="pretty p-default p-curve">
+        <input type="radio" name="color" />
+        <div class="state p-info-o">
+            <label>Info</label>
+        </div>
+    </div>
+
+    <div class="pretty p-default p-curve">
+        <input type="radio" name="color" />
+        <div class="state p-warning-o">
+            <label>Warning</label>
+        </div>
+    </div>
+
+    <div class="pretty p-default p-curve">
+        <input type="radio" name="color" />
+        <div class="state p-danger-o">
+            <label>Danger</label>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
