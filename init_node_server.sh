@@ -2,6 +2,8 @@
 
 set -a
 
+INSTALL_DIR=$1
+
 #AWS Node install
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 . ~/.nvm/nvm.sh
