@@ -1,11 +1,22 @@
 #!/bin/bash
 
-sudo yum -y install nodejs
-node --version
-npm --version
+set -a
+
+#AWS Node install
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install node
+
+node -e "console.log('Running Node.js ' + process.version)"
 
 cd ${INSTALL_DIR}
+
 npm install
 
-node server.js
+npm start
+
+set +a
+
+
+
  
