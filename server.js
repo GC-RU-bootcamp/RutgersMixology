@@ -5,6 +5,7 @@ var path = require('path');
 
 
 var CPU_load_gen = require('./CPU_load_gen');
+var stress = require('./stress');
 
 var os = require('os');
 var ifaces = os.networkInterfaces();
@@ -78,6 +79,39 @@ app.get("/cpuload/:seconds", function (req, res) {
  
   return res.json(retval);
 });
+
+app.get("/stress", function (req, res) {
+
+  console.log( "request=","get", "req.query=", JSON.stringify(req.query) );
+
+   stress(req.query.cpu, req.query.seconds)
+  
+  let retval = {
+    hostname : os.hostname(),
+    IP4_interfaces: ifaces_list,
+    cpu_cnt : req.params.cpu,
+    seconds_load : req.params.seconds
+  }
+ 
+  return res.json(retval);
+
+});
+
+app.get("/stress/:cpu/:seconds", function (req, res) {
+
+  console.log( "request=","get", "req.params=", JSON.stringify(req.params) );
+  stress(req.params.cpu, req.params.seconds);
+  let retval = {
+    hostname : os.hostname(),
+    IP4_interfaces: ifaces_list,
+    cpu_cnt : req.params.cpu,
+    seconds_load : req.params.seconds
+  }
+ 
+  return res.json(retval);
+});
+
+
 
 app.get("/", function(req, res) {
 
